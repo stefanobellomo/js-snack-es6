@@ -47,36 +47,34 @@ const football_teams = [
     }
 ]
 
+// Infine, creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console
 const team_and_fouls = [];
 
+// creo una variable in cui inserire la stringa di dati successivamente
 let resultHTML = ''
-
-console.log(team_and_fouls);
-
 
 // Generare numeri random al posto degli 0 nelle proprietà “punti” fatti e “falli subiti”.
 for (let i = 0; i < football_teams.length; i++) {
     football_teams[i].punti_fatti = Math.floor(Math.random() * 80);
     football_teams[i].falli_subiti = Math.floor(Math.random() * 50);
-    // team_and_fouls.push(football_teams[i].name, football_teams[i].falli_subiti)
-    
+//  creo una variabile di oggetti che poi --->   
     const every = {
         name : football_teams[i].name,
         falli_subiti : football_teams[i].falli_subiti
     }
-
+// ----> pusho la variabile precedente dentro l'array vuoto
     team_and_fouls.push(every)
     
-    resultHTML += `<p>${team_and_fouls[i]}</p>`
+// unisco la stringa vuota resultHTML ai risultati ottenuti
+    resultHTML += `<p>${every.name} — Falli subiti: ${every.falli_subiti}</p>`;
 }
 
-console.log(resultHTML);
+// presento in pagina con innerHTMl i risultati (resultHTML)
+document.getElementById('result').innerHTML = resultHTML;
 
 
-// console.log(football_teams);
     
 
-// Infine, creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console
 
 
 
