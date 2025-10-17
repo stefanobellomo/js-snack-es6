@@ -47,9 +47,9 @@ const football_teams = [
     }
 ]
 
-console.log(football_teams[0]);
-
 const team_and_fouls = [];
+
+let resultHTML = ''
 
 console.log(team_and_fouls);
 
@@ -58,16 +58,25 @@ console.log(team_and_fouls);
 for (let i = 0; i < football_teams.length; i++) {
     football_teams[i].punti_fatti = Math.floor(Math.random() * 80);
     football_teams[i].falli_subiti = Math.floor(Math.random() * 50);
-    team_and_fouls.push(football_teams[i].name, football_teams[i].falli_subiti)
+    // team_and_fouls.push(football_teams[i].name, football_teams[i].falli_subiti)
+    
+    const every = {
+        name : football_teams[i].name,
+        falli_subiti : football_teams[i].falli_subiti
+    }
 
+    team_and_fouls.push(every)
+    
+    resultHTML += `<p>${team_and_fouls[i]}</p>`
 }
+
+console.log(resultHTML);
+
 
 // console.log(football_teams);
     
 
 // Infine, creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console
-
-
 
 
 
