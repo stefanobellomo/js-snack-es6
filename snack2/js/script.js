@@ -75,4 +75,7 @@ const football_teams = [
     }
 ]
 
+console.log(football_teams[0]);
+
+
 
