@@ -49,12 +49,20 @@ const football_teams = [
 
 console.log(football_teams[0]);
 
+const team_and_fouls = [];
+
+console.log(team_and_fouls);
+
 
 // Generare numeri random al posto degli 0 nelle proprietà “punti” fatti e “falli subiti”.
 for (let i = 0; i < football_teams.length; i++) {
-    football_teams[i].punti_fatti = Math.floor(Math.random() * 100);
-    football_teams[i].falli_subiti = Math.floor(Math.random() * 50); 
+    football_teams[i].punti_fatti = Math.floor(Math.random() * 80);
+    football_teams[i].falli_subiti = Math.floor(Math.random() * 50);
+    team_and_fouls.push(football_teams[i].name, football_teams[i].falli_subiti)
+
 }
+
+// console.log(football_teams);
     
 
 // Infine, creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console
